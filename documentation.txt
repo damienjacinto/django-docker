@@ -1,0 +1,8 @@
+SET COMPOSE_CONVERT_WINDOWS_PATHS=1
+désactiver mount windows 
+restart docker
+
+docker-compose run web django-admin.py startproject PRA .
+
+docker exec -it <container> python manage.py migrate
+docker exec -it <container> python manage.py createsuperuser
