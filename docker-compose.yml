@@ -5,7 +5,8 @@ services:
     image: postgres
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: bash -c "while ! nc -w 1 -z db 5432; do sleep 0.1; done; ./manage.py migrate; ./manage.py runserver 0.0.0.0:8000" 
+      python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
