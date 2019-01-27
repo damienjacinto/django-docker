@@ -1,4 +1,3 @@
-/PRA
-/environnements/__pycache__
-/environnements/migrations
+*/__pycache__
+*/migrations
 manage.py
